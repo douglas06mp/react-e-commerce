@@ -1,0 +1,54 @@
+$color-grey: grey;
+$color-black: black;
+
+@mixin shrink {
+  font-size: 1.2rem;
+  color: $color-black;
+  top: -14px;
+}
+
+.input {
+  position: relative;
+  margin: 4.5rem 0;
+
+  &--input {
+    background: none;
+    background-color: white;
+    color: $color-grey;
+    font-size: 1.8rem;
+    padding: 1rem 1rem 1rem 0.5rem;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid $color-grey;
+    margin: 2.5rem 0;
+
+    &:focus {
+      outline: none;
+
+      & ~ .input--label {
+        @include shrink();
+      }
+    }
+  }
+
+  input[type='password'] {
+    letter-spacing: 0.3rem;
+  }
+
+  &--label {
+    color: $color-grey;
+    font-size: 1.6rem;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.3s ease all;
+
+    &.shrink {
+      @include shrink();
+    }
+  }
+}
