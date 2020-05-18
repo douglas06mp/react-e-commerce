@@ -3,7 +3,11 @@ import './Input.scss';
 
 const Input = ({ handleChange, label, ...props }) => {
   const capitalize = (str) => {
-    return `${str[0].toUpperCase()}${str.slice(1)}`;
+    return str
+      .trim()
+      .split(' ')
+      .map((s) => `${s[0].toUpperCase()}${s.slice(1)}`)
+      .join(' ');
   };
 
   return (
