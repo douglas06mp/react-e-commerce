@@ -1,23 +1,45 @@
+$color-white: #fff;
+$color-black: #000;
+$color-red-google: #db4437;
+
+@mixin originStyle($color) {
+  background-image: linear-gradient(
+    120deg,
+    transparent 0%,
+    transparent 50%,
+    $color 50%
+  );
+  background-size: 230%;
+  color: $color;
+  border: 2px solid $color;
+}
+
 .button {
   min-width: 16.5rem;
   width: auto;
   height: 5rem;
   letter-spacing: 0.5px;
-  line-height: 5rem;
+  line-height: 4rem;
   padding: 0 3.5rem;
   font-size: 1.5rem;
-  background-color: black;
-  color: white;
   text-transform: uppercase;
   font-family: 'Open Sans Condensed';
   font-weight: bolder;
-  border: none;
   cursor: pointer;
-  transition: 0.3s ease all;
+  background-color: $color-white;
+  @include originStyle($color-black);
+  transition: 0.4s ease all;
 
   &:hover {
-    background-color: white;
-    color: black;
-    border: 1px solid black;
+    background-position: 100%;
+    color: $color-white;
+  }
+
+  &.google-sign-in {
+    @include originStyle($color-red-google);
+
+    &:hover {
+      color: $color-white;
+    }
   }
 }
