@@ -3,12 +3,17 @@
   height: 70px;
   display: flex;
   justify-content: space-between;
+  padding: 0 8rem;
   margin-bottom: 2.5rem;
 
   &--logo-box {
     width: 70px;
     height: 100%;
     padding: 2.5rem;
+
+    svg {
+      transform: translate(-20px, -5px);
+    }
   }
 
   &--links {
