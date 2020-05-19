@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { auth } from '../../firebase/firebase.util';
-import CartDropdown from '../cartDropdown/CartDropdown';
+import CartDropdown from '../cart-dropdown/CartDropdown';
 import { ReactComponent as Logo } from '../../assets/icon.svg';
-import CartIcon from '../cartIcon/CartIcon';
+import CartIcon from '../cart-icon/CartIcon';
 import './Header.scss';
 
 const Header = ({ user, hidden }) => {
