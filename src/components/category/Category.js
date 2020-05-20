@@ -5,7 +5,7 @@ import './Category.scss';
 const Category = ({ title, imageUrl, size, linkUrl, history, match }) => {
   return (
     <div
-      className={`category ${size}`}
+      className={`category ${size ? size : ''}`}
       onClick={() => history.push(`${match.url}${linkUrl}`)}
     >
       <div

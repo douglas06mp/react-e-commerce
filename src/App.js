@@ -8,6 +8,7 @@ import { selectCurrentUser } from './redux/user/userSelector';
 import Home from './pages/home/Home';
 import Shop from './pages/shop/Shop';
 import Login from './pages/login/Login';
+import Checkout from './pages/checkout/Checkout';
 import Header from './components/header/Header';
 import './App.css';
 
@@ -45,6 +46,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" render={() => <Home />} />
           <Route exact path="/shop" render={() => <Shop />} />
+          <Route exact path="/checkout" render={() => <Checkout />} />
           <Route
             exact
             path="/login"
