@@ -19,6 +19,30 @@
 
   &--info {
     flex-basis: 23%;
+
+    &:nth-child(2) {
+      display: flex;
+
+      .checkout-item--arrow {
+        cursor: pointer;
+      }
+
+      .checkout-item--value {
+        margin: 0 1rem;
+      }
+    }
+  }
+
+  .quantity {
+    display: flex;
+
+    .checkout-item--arrow {
+      cursor: pointer;
+    }
+
+    .checkout-item--value {
+      margin: 0 1rem;
+    }
   }
 
   &--remove {

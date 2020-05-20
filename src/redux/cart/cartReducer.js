@@ -1,5 +1,10 @@
-import { TOGGLE_DROPDOWN, ADD_ITEM, CLEAR_ITEM } from './cartActionType';
-import { addItemToCart } from './cart.util';
+import {
+  TOGGLE_DROPDOWN,
+  ADD_ITEM,
+  REMOVE_ITEM,
+  CLEAR_ITEM,
+} from './cartActionType';
+import { addItemToCart, removeItemFromCart } from './cart.util';
 
 const INIT_STATE = {
   hidden: true,
@@ -12,6 +17,11 @@ const cartReducer = (state = INIT_STATE, action) => {
       return {
         ...state,
         cartItems: addItemToCart(state.cartItems, action.payload),
+      };
+    case REMOVE_ITEM:
+      return {
+        ...state,
+        cartItems: removeItemFromCart(state.cartItems, action.payload),
       };
     case CLEAR_ITEM:
       return {
