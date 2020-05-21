@@ -1,5 +1,5 @@
-.collection {
-  width: 22%;
+.collection-item {
+  flex-basis: 22%;
   height: 350px;
   display: flex;
   flex-direction: column;
@@ -7,7 +7,7 @@
   position: relative;
 
   &:hover {
-    .collection--img,
+    .collection-item--img,
     button {
       opacity: 0.8;
     }

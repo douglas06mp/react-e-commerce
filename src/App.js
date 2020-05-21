@@ -45,7 +45,10 @@ class App extends Component {
         <Header />
         <Switch>
           <Route exact path="/" render={() => <Home />} />
-          <Route exact path="/shop" render={() => <Shop />} />
+          <Route
+            path="/shop"
+            component={(routeProps) => <Shop {...routeProps} />}
+          />
           <Route exact path="/checkout" render={() => <Checkout />} />
           <Route
             exact
