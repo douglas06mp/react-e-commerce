@@ -1,4 +1,4 @@
-const DIRECTORY_DATA = [
+export const DIRECTORY_DATA = [
   {
     title: 'hats',
 
@@ -36,5 +36,3 @@ const DIRECTORY_DATA = [
     linkUrl: 'shop/mens',
   },
 ];
-
-export default DIRECTORY_DATA;
