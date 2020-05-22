@@ -1,22 +1,25 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import './Category.scss';
+import {
+  CategoryContainer,
+  BackgroundImg,
+  Content,
+  Title,
+  Subtitle,
+} from './Category.style';
 
 const Category = ({ title, imageUrl, size, linkUrl, history, match }) => {
   return (
-    <div
-      className={`category ${size ? size : ''}`}
+    <CategoryContainer
+      size={size}
       onClick={() => history.push(`${match.url}${linkUrl}`)}
     >
-      <div
-        className="category--background"
-        style={{ backgroundImage: `url(${imageUrl})` }}
-      ></div>
-      <div className="category--content">
-        <h1 className="category--title">{title.toUpperCase()}</h1>
-        <span className="category--subtitle">SHOP NOW</span>
-      </div>
-    </div>
+      <BackgroundImg imageUrl={imageUrl} />
+      <Content>
+        <Title>{title.toUpperCase()}</Title>
+        <Subtitle>SHOP NOW</Subtitle>
+      </Content>
+    </CategoryContainer>
   );
 };
 

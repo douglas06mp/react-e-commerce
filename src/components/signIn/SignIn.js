@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { auth, signInWithGoogle } from '../../firebase/firebase.util';
 import Input from '../input/Input';
 import Button from '../button/Button';
-import './SignIn.scss';
+import { SignInContainer, Title, Subtitle, Buttons } from './SignIn.style';
 
 export default class signIn extends Component {
   constructor(props) {
@@ -31,11 +31,9 @@ export default class signIn extends Component {
 
   render() {
     return (
-      <div className="signIn">
-        <h2 className="signIn--title">I already have an account</h2>
-        <span className="signIn--subtitle">
-          Sign in with your email and password
-        </span>
+      <SignInContainer>
+        <Title>I already have an account</Title>
+        <Subtitle>Sign in with your email and password</Subtitle>
         <form onSubmit={this.handleSubmit}>
           <Input
             type="email"
@@ -53,14 +51,14 @@ export default class signIn extends Component {
             label="password"
             required
           />
-          <div className="signIn--buttons">
+          <Buttons>
             <Button type="submit">Sign In</Button>
             <Button type="button" onClick={signInWithGoogle} google>
               Sign in with google
             </Button>
-          </div>
+          </Buttons>
         </form>
-      </div>
+      </SignInContainer>
     );
   }
 }

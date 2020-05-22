@@ -2,20 +2,20 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { selectCollection } from '../../redux/shop/shopSelector';
 import CollectionItem from '../../components/collection-item/CollectionItem';
-import './Collection.scss';
+import { CollectionContainer, Title, Items } from './Collection.style';
 
 const Collection = ({ collection }) => {
   const { title, items } = collection;
 
   return (
-    <div className="collection">
-      <h2 className="collection--title">{title}</h2>
-      <div className="collection--items">
+    <CollectionContainer>
+      <Title>{title}</Title>
+      <Items>
         {items.map((item) => (
           <CollectionItem key={item.id} item={item} />
         ))}
-      </div>
-    </div>
+      </Items>
+    </CollectionContainer>
   );
 };
 

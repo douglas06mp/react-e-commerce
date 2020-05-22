@@ -1,5 +1,5 @@
 import React from 'react';
-import './Input.scss';
+import { InputContainer, Inputfield, Label } from './Input.style';
 
 const Input = ({ handleChange, label, ...props }) => {
   const capitalize = (str) => {
@@ -11,14 +11,10 @@ const Input = ({ handleChange, label, ...props }) => {
   };
 
   return (
-    <div className="input">
-      <input className="input--input" {...props} autoComplete="off" />
-      {label ? (
-        <label className={`input--label ${props.value.length ? 'shrink' : ''}`}>
-          {capitalize(label)}
-        </label>
-      ) : null}
-    </div>
+    <InputContainer>
+      <Inputfield {...props} autoComplete="off" />
+      {label ? <Label value={props.value}>{capitalize(label)}</Label> : null}
+    </InputContainer>
   );
 };
 

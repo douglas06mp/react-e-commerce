@@ -6,20 +6,20 @@ import { selectCartItems } from '../../redux/cart/cartSelector';
 import { toggleDropdown } from '../../redux/cart/cartAction';
 import CartItem from '../cart-item/CartItem';
 import Button from '../button/Button';
-import './CartDropdown.scss';
+import { CartDropdownContainer, Items, Empty } from './CartDropdown.style';
 
 const CartDropdown = ({ cartItems, history, toggleDropdown }) => {
   return (
-    <div className="dropdown">
-      <div className="dropdown--items">
+    <CartDropdownContainer>
+      <Items>
         {cartItems.length ? (
           cartItems.map((cartItem) => (
             <CartItem key={cartItem.id} item={cartItem} />
           ))
         ) : (
-          <span className="dropdown--empty">Your cart is empty</span>
+          <Empty>Your cart is empty</Empty>
         )}
-      </div>
+      </Items>
       <Button
         onClick={() => {
           toggleDropdown();
@@ -28,7 +28,7 @@ const CartDropdown = ({ cartItems, history, toggleDropdown }) => {
       >
         CHECKOUT
       </Button>
-    </div>
+    </CartDropdownContainer>
   );
 };
 

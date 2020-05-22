@@ -3,15 +3,15 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { selectDirectories } from '../../redux/directory/directorySelector';
 import Category from '../category/Category';
-import './Directory.scss';
+import { DirectoryContainer } from './Directory.style';
 
 const Directory = ({ directories }) => {
   return (
-    <div className="directory">
+    <DirectoryContainer>
       {directories.map(({ id, ...category }) => (
         <Category key={id} {...category} />
       ))}
-    </div>
+    </DirectoryContainer>
   );
 };
 
