@@ -29,4 +29,15 @@
     font-size: 3.6rem;
     font-weight: bold;
   }
+
+  &--test {
+    text-align: center;
+    margin-top: 4rem;
+    font-size: 2.4rem;
+    color: red;
+  }
+
+  button {
+    margin: auto 0 0 auto;
+  }
 }

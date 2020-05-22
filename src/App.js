@@ -10,7 +10,6 @@ import Shop from './pages/shop/Shop';
 import Login from './pages/login/Login';
 import Checkout from './pages/checkout/Checkout';
 import Header from './components/header/Header';
-import './App.css';
 
 class App extends Component {
   unSubscribeFromAuth = null;
