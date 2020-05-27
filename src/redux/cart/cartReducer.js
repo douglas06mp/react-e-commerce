@@ -3,6 +3,7 @@ import {
   ADD_ITEM,
   REMOVE_ITEM,
   CLEAR_ITEM,
+  CLEAR_CART,
 } from './cartActionType';
 import { addItemToCart, removeItemFromCart } from './cart.util';
 
@@ -30,6 +31,8 @@ const cartReducer = (state = INIT_STATE, action) => {
           (cartItem) => cartItem.id !== action.payload.id
         ),
       };
+    case CLEAR_CART:
+      return { ...state, cartItems: [] };
     case TOGGLE_DROPDOWN:
       return { ...state, hidden: !state.hidden };
     default:
