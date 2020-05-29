@@ -1,0 +1,43 @@
+.checkout {
+  width: 55%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5rem auto 0;
+
+  &--header {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid darkgrey;
+  }
+
+  &--title {
+    text-transform: capitalize;
+    flex-basis: 23%;
+    font-size: 2.2rem;
+
+    &:last-child {
+      flex-basis: 8%;
+    }
+  }
+
+  &--total {
+    margin: 3rem 0 0 auto;
+    font-size: 3.6rem;
+    font-weight: bold;
+  }
+
+  &--test {
+    text-align: center;
+    margin-top: 4rem;
+    font-size: 2.4rem;
+    color: red;
+  }
+
+  button {
+    margin: auto 0 0 auto;
+  }
+}

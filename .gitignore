@@ -19,13 +19,13 @@
 /client/.env.test.local
 /client/.env.production.local
 
-
+#private
 .env
+/client/src/stripe.js
+/client/src/firebase/firebase.config.js
+
+
 
 /client/npm-debug.log*
 /client/yarn-debug.log*
 /client/yarn-error.log*
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
