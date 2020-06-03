@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import mediaQuery from '../../styles/mediaQuery';
 
 export const CartDropdownContainer = styled.div`
   position: absolute;
@@ -13,6 +14,11 @@ export const CartDropdownContainer = styled.div`
   right: 0;
   z-index: 5;
 
+  ${mediaQuery.down('tabletL')} {
+    width: 30rem;
+    height: 38rem;
+  }
+
   button {
     margin-top: auto;
   }
@@ -23,6 +29,10 @@ export const Items = styled.div`
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
+
+  ${mediaQuery.down('tabletL')} {
+    height: 27rem;
+  }
 `;
 
 export const Empty = styled.span`

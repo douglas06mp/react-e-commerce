@@ -1,12 +1,29 @@
 import styled from 'styled-components';
+import mediaQuery from '../../styles/mediaQuery';
 
 export const CheckoutContainer = styled.div`
-  width: 55%;
+  width: 60%;
   min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 5rem auto 0;
+
+  ${mediaQuery.down('laptopM')} {
+    width: 65%;
+  }
+
+  ${mediaQuery.down('laptop')} {
+    width: 75%;
+  }
+
+  ${mediaQuery.down('tablet')} {
+    width: 85%;
+  }
+
+  ${mediaQuery.down('mobileL')} {
+    width: 100%;
+  }
 
   button {
     margin: 3rem 0 0 auto;

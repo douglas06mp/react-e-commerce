@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import mediaQuery from '../../styles/mediaQuery';
 
 export const HeaderContainer = styled.div`
   width: 100%;
@@ -16,7 +17,11 @@ export const LogoBox = styled(Link)`
   padding: 2.5rem;
 
   svg {
-    transform: translate(-20px, -5px);
+    transform: translate(-20px, -15px);
+
+    ${mediaQuery.down('mobileL')} {
+      transform: translate(-20px, -10px) scale(0.8);
+    }
   }
 `;
 
@@ -26,10 +31,22 @@ export const LinkGroup = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  ${mediaQuery.down('tabletL')} {
+    width: 75%;
+  }
 `;
 
 export const HeaderLink = styled(Link)`
   font-size: 2rem;
   padding: 1rem 1.5rem;
   cursor: pointer;
+
+  ${mediaQuery.down('tabletL')} {
+    padding: 1rem;
+  }
+
+  ${mediaQuery.down('mobileL')} {
+    padding: 0.8rem;
+  }
 `;

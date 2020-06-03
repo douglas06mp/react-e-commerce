@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import mediaQuery from '../../styles/mediaQuery';
 
 export const CollectionPreviewContainer = styled.div`
   display: flex;
@@ -14,4 +15,8 @@ export const Title = styled.h1`
 export const Content = styled.div`
   display: flex;
   justify-content: space-between;
+
+  ${mediaQuery.down('tabletL')} {
+    flex-wrap: wrap;
+  }
 `;

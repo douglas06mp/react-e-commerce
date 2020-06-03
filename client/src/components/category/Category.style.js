@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import mediaQuery from '../../styles/mediaQuery';
 
 export const CategoryContainer = styled.div`
   min-width: 30%;
@@ -12,12 +13,14 @@ export const CategoryContainer = styled.div`
   cursor: pointer;
   height: ${(props) => (props.size === 'large' ? '380px' : '240px')};
 
-  &:first-child {
-    margin-right: 0.75rem;
+  ${mediaQuery.down('tablet')} {
+    min-width: 45%;
+    height: 28rem;
   }
 
-  &:last-child {
-    margin-left: 0.75rem;
+  ${mediaQuery.down('mobileL')} {
+    min-width: 100%;
+    margin: 0 0 3rem 0;
   }
 
   &:hover > * {

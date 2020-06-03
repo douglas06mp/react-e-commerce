@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import mediaQuery from '../../styles/mediaQuery';
 
 export const CollectionContainer = styled.div`
   display: flex;
@@ -11,7 +12,7 @@ export const Title = styled.h2`
 `;
 
 export const Items = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 2rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 `;

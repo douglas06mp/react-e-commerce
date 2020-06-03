@@ -9,6 +9,7 @@ import Shop from './pages/shop/Shop';
 import Login from './pages/login/Login';
 import Checkout from './pages/checkout/Checkout';
 import Header from './components/header/Header';
+import { GlobleStyle } from './styles/globalStyle';
 
 const App = ({ user, checkUserSession }) => {
   useEffect(() => {
@@ -17,6 +18,7 @@ const App = ({ user, checkUserSession }) => {
 
   return (
     <>
+      <GlobleStyle />
       <Header />
       <Switch>
         <Route exact path="/" render={() => <Home />} />

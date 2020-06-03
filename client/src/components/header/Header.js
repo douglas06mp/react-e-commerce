@@ -22,13 +22,13 @@ const Header = ({ user, hidden, signOutStart }) => {
       </LogoBox>
       <LinkGroup>
         <HeaderLink to="/shop">SHOP</HeaderLink>
-        <HeaderLink to="/contact">CONTACT</HeaderLink>
+        <HeaderLink to="/checkout">CHECKOUT</HeaderLink>
         {user ? (
           <HeaderLink as="div" onClick={signOutStart}>
-            SIGN OUT
+            LOG OUT
           </HeaderLink>
         ) : (
-          <HeaderLink to="/login">SIGN IN</HeaderLink>
+          <HeaderLink to="/login">LOG IN</HeaderLink>
         )}
         <CartIcon />
       </LinkGroup>

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import mediaQuery from '../../styles/mediaQuery';
 
 export const CollectionItemContainer = styled.div`
   flex-basis: 22%;
@@ -16,11 +17,33 @@ export const CollectionItemContainer = styled.div`
     }
   }
 
+  ${mediaQuery.down('tabletL')} {
+    flex-basis: 48%;
+    margin-bottom: 5rem;
+  }
+
+  ${mediaQuery.down('tablet')} {
+    &:hover {
+      div:first-child,
+      button {
+        opacity: unset;
+      }
+    }
+  }
+
+  ${mediaQuery.down('mobileL')} {
+    flex-basis: 100%;
+  }
+
   button {
     width: 80%;
     opacity: 0;
     position: absolute;
     bottom: 5rem;
+
+    ${mediaQuery.down('tablet')} {
+      opacity: 0.7;
+    }
   }
 `;
 
