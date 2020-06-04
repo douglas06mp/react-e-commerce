@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import mediaQuery from '../../styles/mediaQuery';
 
 export const CollectionContainer = styled.div`
   display: flex;
