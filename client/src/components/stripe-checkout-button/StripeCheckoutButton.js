@@ -1,12 +1,22 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { selectCurrentUser } from '../../redux/user/userSelector';
 import axios from 'axios';
 import { publishKey } from '../../stripe';
 import StripeCheckout from 'react-stripe-checkout';
 
-const StripeCheckoutButton = ({ price }) => {
+const StripeCheckoutButton = ({ price, user, history }) => {
   const priceForStripe = price * 100;
 
   const onToken = (token) => {
+    if (!user) {
+      alert('Please Login');
+      history.push('/login');
+      return;
+    }
+
     axios({
       url: 'payment',
       method: 'post',
@@ -41,4 +51,8 @@ const StripeCheckoutButton = ({ price }) => {
   );
 };
 
-export default StripeCheckoutButton;
+const mapStateToProps = createStructuredSelector({
+  user: selectCurrentUser,
+});
+
+export default withRouter(connect(mapStateToProps)(StripeCheckoutButton));
