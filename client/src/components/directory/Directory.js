@@ -5,7 +5,7 @@ import { selectDirectories } from '../../redux/directory/directorySelector';
 import Category from '../category/Category';
 import { DirectoryContainer } from './Directory.style';
 
-const Directory = ({ directories }) => {
+export const Directory = ({ directories }) => {
   return (
     <DirectoryContainer>
       {directories.map(({ id, ...category }) => (

@@ -8,7 +8,7 @@ import CartItem from '../cart-item/CartItem';
 import Button from '../button/Button';
 import { CartDropdownContainer, Items, Empty } from './CartDropdown.style';
 
-const CartDropdown = ({ cartItems, history, toggleDropdown }) => {
+export const CartDropdown = ({ cartItems, history, toggleDropdown }) => {
   return (
     <CartDropdownContainer>
       <Items>
@@ -17,10 +17,11 @@ const CartDropdown = ({ cartItems, history, toggleDropdown }) => {
             <CartItem key={cartItem.id} item={cartItem} />
           ))
         ) : (
-          <Empty>Your cart is empty</Empty>
+          <Empty id="EmptyMessage">Your cart is empty</Empty>
         )}
       </Items>
       <Button
+        id="CheckoutButton"
         onClick={() => {
           toggleDropdown();
           history.push('/checkout');

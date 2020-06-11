@@ -50,3 +50,5 @@ export const HeaderLink = styled(Link)`
     padding: 0.8rem;
   }
 `;
+
+HeaderLink.displayName = 'HeaderLink';

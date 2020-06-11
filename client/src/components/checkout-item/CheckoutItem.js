@@ -9,22 +9,28 @@ import {
   RemoveButton,
 } from './CheckoutItem.style';
 
-const CheckoutItem = ({ item, addItem, removeItem, clearItem }) => {
+export const CheckoutItem = ({ item, addItem, removeItem, clearItem }) => {
   const { name, imageUrl, price, quantity } = item;
 
   return (
     <CheckoutItemContainer>
       <ImageBox>
-        <img src={imageUrl} alt="item" />
+        <img id="CheckoutItemImg" src={imageUrl} alt="item" />
       </ImageBox>
       <Info>{name}</Info>
       <Quantity>
-        <span onClick={() => removeItem(item)}>&#10094;</span>
+        <span id="CheckoutItemRemove" onClick={() => removeItem(item)}>
+          &#10094;
+        </span>
         <span>{quantity}</span>
-        <span onClick={() => addItem(item)}>&#10095;</span>
+        <span id="CheckoutItemAdd" onClick={() => addItem(item)}>
+          &#10095;
+        </span>
       </Quantity>
       <Info>${price}</Info>
-      <RemoveButton onClick={() => clearItem(item)}>&#10005;</RemoveButton>
+      <RemoveButton id="CheckoutItemClear" onClick={() => clearItem(item)}>
+        &#10005;
+      </RemoveButton>
     </CheckoutItemContainer>
   );
 };

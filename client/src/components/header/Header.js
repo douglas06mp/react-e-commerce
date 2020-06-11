@@ -14,7 +14,7 @@ import {
   HeaderLink,
 } from './Header.style';
 
-const Header = ({ user, hidden, signOutStart }) => {
+export const Header = ({ user, hidden, signOutStart }) => {
   return (
     <HeaderContainer>
       <LogoBox to="/">

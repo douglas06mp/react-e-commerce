@@ -10,7 +10,7 @@ import {
   Price,
 } from './CollectionItem.style';
 
-const CollectionItem = ({ item, addItem }) => {
+export const CollectionItem = ({ item, addItem }) => {
   const { name, price, imageUrl } = item;
   return (
     <CollectionItemContainer>
@@ -19,7 +19,7 @@ const CollectionItem = ({ item, addItem }) => {
         <Name>{name}</Name>
         <Price>${price}</Price>
       </Footer>
-      <Button onClick={() => addItem(item)} invert>
+      <Button id="CollectionItemAdd" onClick={() => addItem(item)} invert>
         ADD TO CART
       </Button>
     </CollectionItemContainer>

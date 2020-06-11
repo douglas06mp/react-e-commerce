@@ -10,6 +10,7 @@ export const CollectionPreviewContainer = styled.div`
 export const Title = styled.h1`
   font-size: 2.8rem;
   margin-bottom: 2.5rem;
+  cursor: pointer;
 `;
 
 export const Content = styled.div`

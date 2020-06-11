@@ -6,11 +6,11 @@ import { toggleDropdown } from '../../redux/cart/cartAction';
 import { ReactComponent as Bag } from '../../assets/bag.svg';
 import { CartIconContainer, Count } from './CartIcon.style';
 
-const CartIcon = ({ toggleDropdown, itemCount }) => {
+export const CartIcon = ({ toggleDropdown, itemCount }) => {
   return (
-    <CartIconContainer onClick={toggleDropdown}>
+    <CartIconContainer id="CartIcon" onClick={toggleDropdown}>
       <Bag />
-      <Count>{itemCount}</Count>
+      <Count id="Count">{itemCount}</Count>
     </CartIconContainer>
   );
 };
